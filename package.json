@@ -1,0 +1,29 @@
+{
+  "name": "festival-musica",
+  "version": "1.0.0",
+  "description": "Aprendiendo Gulp y SASS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matidiaz032/Festival-de-Musica-con-Sass-y-Gulp.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp",
+    "Web",
+    "Design"
+  ],
+  "author": "Matias Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matidiaz032/Festival-de-Musica-con-Sass-y-Gulp/issues"
+  },
+  "homepage": "https://github.com/matidiaz032/Festival-de-Musica-con-Sass-y-Gulp#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
