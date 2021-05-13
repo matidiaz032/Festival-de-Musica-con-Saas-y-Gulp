@@ -1,0 +1,28 @@
+.header {
+    background-color: $verde;
+
+    .contenido-header {
+        padding: $separacion / 2 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        color: $blanco;
+    }
+
+    .navegacion-principal {
+        display: flex;
+        gap: 2rem;
+
+        a {
+           color: $blanco;
+           font-size: 2rem; 
+
+           &:hover { // & hace referencia al elemento padre, para generar la identacion en el archivo css
+               color: $amarillo;
+           }
+        }
+    }
+}
