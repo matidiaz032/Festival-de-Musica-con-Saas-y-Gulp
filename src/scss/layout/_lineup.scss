@@ -1,0 +1,53 @@
+.lineup {
+    background-color: $rosa;
+    padding: $separacion 0;
+
+    h3, p {
+        text-align: center;
+        color: $blanco;
+    }
+
+    .dia {
+        text-transform: uppercase;
+        margin: $separacion 0;
+    }
+}
+
+.escenarios-contenedor {
+    @include tablet {
+        @include grid(2, $separacion)
+    }
+
+    .escenario {
+        padding-top: $separacion / 2;
+    }
+
+    .nombre-escenario {
+        color: $negro;
+        font-size: 2rem;
+        font-weight: $light;
+
+        &:after { // & para que el selector quede junto
+            content: '';
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto; //centrar
+            background-size: 15rem; // tamaño de img
+            background-repeat: no-repeat;
+            background-position: center center //centrar img
+        }
+    }
+}
+
+.edm .nombre-escenario {
+    &:after {
+        background-image: url(../img/icono_edm.png);
+    }
+}
+
+.rock .nombre-escenario {
+    &:after {
+        background-image: url(../img/icono_rock.png);
+    }
+}

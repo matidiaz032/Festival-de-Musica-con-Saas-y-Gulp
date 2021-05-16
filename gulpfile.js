@@ -1,9 +1,9 @@
 const { series, src, dest, watch, parallel } = require('gulp');
 const sass = require('gulp-sass');
-/* const imagemin  = require('gulp-imagemin');
+const imagemin  = require('gulp-imagemin');
 const notify = require('gulp-notify');
 const webp = require('gulp-webp');
-const concat = require('gulp-concat'); */
+/*const concat = require('gulp-concat'); */
 
 // Utilidades CSS
 /* const autoprefixer = require('autoprefixer');
@@ -15,14 +15,14 @@ const sourcemaps = require('gulp-sourcemaps'); */
 /* const terser = require('gulp-terser-js');
 const rename = require('gulp-rename'); */
 
-/*  const paths = { */
-   // imagenes: 'src/img/**/*',
-   // scss: 'src/scss/**/*.scss',
+ const paths = {
+    imagenes: 'src/img/**/*',
+    scss: 'src/scss/**/*.scss',
    // js: 'src/js/**/*.js'
-/* } */
+}
 
 function css() {
-    return src('src/scss/app.scss')
+    return src(paths.scss)
         .pipe( sass())
         .pipe( dest('./build/css') )
 }
@@ -37,22 +37,22 @@ function css() {
         .pipe( dest('./build/js') )
 } */
 
-/* function imagenes() {
+function imagenes() {
     return src(paths.imagenes)
         .pipe( imagemin() )
         .pipe( dest( './build/img' ))
         .pipe( notify({ message: 'Imagen Minificada'}) );
-} */
+}
 
-/* function versionWebp() {
+function versionWebp() {
     return src(paths.imagenes)
         .pipe( webp() )
         .pipe( dest('./build/img'))
         .pipe( notify({message: 'Versión webP lista'}));
-} */
+}
 
 function minificarcss() {
-    return src('src/scss/app.scss')
+    return src(paths.scss)
     .pipe( sass({
         outputStyle: 'compressed'
     }))
@@ -60,12 +60,13 @@ function minificarcss() {
 }
 
 function watchArchivos() {
-    watch( 'src/scss/**/*.scss', css );
+    watch( paths.scss, css );
 }
 
 exports.css = css;
-/* exports.imagenes = imagenes; */
+exports.imagenes = imagenes;
 exports.minificarcss = minificarcss;
 exports.watchArchivos = watchArchivos;
 
+exports.default = series( css, imagenes, versionWebp, watchArchivos );
 /* exports.default = series( css, javascript, imagenes, versionWebp, watchArchivos ); */
