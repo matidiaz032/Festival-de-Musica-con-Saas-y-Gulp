@@ -355,7 +355,7 @@ h3 {
 .header {
   background-color: #4CB8B3; }
   .header .contenido-header {
-    padding: 2.5rem 0; }
+    padding: 1.25rem 0; }
     @media (min-width: 768px) {
       .header .contenido-header {
         display: flex;
@@ -363,8 +363,9 @@ h3 {
         align-items: center; } }
   .header h1 {
     color: #FFF;
-    margin-bottom: 1rem;
-    text-align: center; }
+    margin-bottom: .5rem;
+    text-align: center;
+    font-size: 3.2rem; }
     @media (min-width: 768px) {
       .header h1 {
         margin-bottom: 0; } }
@@ -374,9 +375,14 @@ h3 {
     justify-content: center; }
     .header .navegacion-principal a {
       color: #FFF;
-      font-size: 2rem; }
+      font-size: 1.8rem; }
       .header .navegacion-principal a:hover {
         color: #FEF46D; }
+
+.fijo {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 .3rem 1rem; }
 
 .video {
   position: relative;
@@ -417,7 +423,7 @@ h3 {
       padding: 1rem 2rem; }
 
 .sobre-festival {
-  padding: 5rem 0; }
+  padding: 2.5rem 0; }
   @media (min-width: 768px) {
     .sobre-festival {
       display: grid;
@@ -429,7 +435,7 @@ h3 {
   flex-direction: column;
   justify-content: center; }
   .contenido-festival h2 {
-    font-size: 3rem; }
+    font-size: 2.8rem; }
   .contenido-festival .fecha {
     color: #F53756;
     font-weight: 700; }
@@ -522,6 +528,9 @@ h3 {
   display: grid;
   place-items: center; }
 
+.img-grande {
+  width: 50%; }
+
 .btn-cerrar {
   width: 5rem;
   height: 5rem;
@@ -533,3 +542,54 @@ h3 {
   border-radius: 50%; }
   .btn-cerrar:hover {
     cursor: pointer; }
+
+.boletos {
+  padding: 5rem 0; }
+  .boletos h3 {
+    text-align: center;
+    color: #FFF; }
+  .boletos .contenedor-boletos {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem; }
+  .boletos .plan p {
+    color: #FFF;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem; }
+
+.pase {
+  width: 100%;
+  border-spacing: 0; }
+  .pase thead {
+    width: 100%;
+    background-color: #F53756; }
+    .pase thead th {
+      padding: 1.25rem;
+      color: #FFF;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 2rem; }
+  .pase tbody {
+    background-color: #FFF; }
+    .pase tbody td {
+      padding: 1.25rem;
+      border-bottom: 1px solid  #e1e1e1; }
+    .pase tbody tr:last-of-type td {
+      border: none; }
+  .pase tfoot {
+    background-color: #752F97; }
+    .pase tfoot td {
+      padding: 1.25rem;
+      text-align: center;
+      font-size: 3rem;
+      color: #FFF; }
+
+.footer {
+  background-color: #F53756;
+  padding: 1.25rem;
+  text-align: center; }
+  .footer p {
+    color: #FFF;
+    margin: 0; }

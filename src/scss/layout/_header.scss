@@ -2,7 +2,7 @@
     background-color: $verde;
 
     .contenido-header {
-        padding: $separacion / 2 0;
+        padding: $separacion / 4 0;
 
         @include tablet {
             display: flex;
@@ -13,8 +13,9 @@
 
     h1 {
         color: $blanco;
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         text-align: center;
+        font-size: 3.2rem;
         @include tablet {
             margin-bottom: 0;
         }
@@ -27,11 +28,17 @@
 
         a {
            color: $blanco;
-           font-size: 2rem; 
+           font-size: 1.8rem; 
 
            &:hover { // & hace referencia al elemento padre, para generar la identacion en el archivo css
                color: $amarillo;
            }
         }
     }
+}
+
+.fijo {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 .3rem 1rem;
 }

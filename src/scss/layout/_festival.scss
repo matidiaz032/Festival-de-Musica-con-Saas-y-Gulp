@@ -1,5 +1,5 @@
 .sobre-festival {
-    padding: $separacion 0;
+    padding: $separacion / 2 0;
 
     @include tablet {
         @include grid(2, $separacion);
@@ -12,7 +12,7 @@
     justify-content: center;
 
     h2 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     .fecha {
         color: $rosa;

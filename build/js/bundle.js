@@ -1,4 +1,43 @@
-console.log("Funcionando");
+document.addEventListener('DOMContentLoaded', function() {
+   scrollNav()
+
+   navegacionFija();
+})
+
+//header fijo a la mitad de la pagina
+function navegacionFija() {
+
+   const barra = document.querySelector('.header');
+
+   //Registrar el Itersection Observer
+   const observer = new IntersectionObserver( function(entries) {
+      if (entries[0].isIntersecting) {
+         barra.classList.remove('fijo')
+      } else {
+         barra.classList.add('fijo')
+      }
+   });
+
+   //Elemento a observar
+   observer.observe(document.querySelector('.sobre-festival'));
+}
+
+// Smooth scrol
+function scrollNav() {
+   const enlaces = document.querySelectorAll('.navegacion-principal a');
+
+   enlaces.forEach(enlace => {
+      enlace.addEventListener('click', function(e) {
+         e.preventDefault(); //elimina la accion por default
+
+         const seccion = document.querySelector(e.target.attributes.href.value);
+
+         seccion.scrollIntoView({ //funcion de js para el scroll
+            behavior: 'smooth'
+         })
+      })
+   })
+}
 document.addEventListener('DOMContentLoaded', function () {
     crearGaleria();
 })
@@ -8,7 +47,7 @@ function crearGaleria() {
 
     for (let i = 1; i <= 12; i++) {
         const imagen = document.createElement('IMG'); // crea una etiqueta img
-        imagen.src = `build/img/thumb/${i}.webp`;
+        imagen.src = `build/img/thumb/${i}.webp`; // <img src="">
         imagen.dataset.imagenId = i; // crea un atributo 'data' en cada img
 
         //Añadir la funcion de agrandar imagen
@@ -27,6 +66,7 @@ function mostrarImagen(e) {
     //Generar la imagen
     const imagen = document.createElement('IMG');
     imagen.src = `build/img/grande/${id}.webp`;
+    imagen.classList.add('img-grande')
 
     //Efecto oscuro
     const overlay = document.createElement('DIV');
@@ -36,6 +76,7 @@ function mostrarImagen(e) {
     //click fuera de la imagen para cerrar
     overlay.onclick = function() {
         overlay.remove();
+        body.classList.remove('fijar-body')
     }
 
     //Boton para cerrar la imagen
@@ -46,6 +87,7 @@ function mostrarImagen(e) {
     //Click para cerrar
     cerrarImagen.onclick = function() {
         overlay.remove();
+        body.classList.remove('fijar-body')
     }
 
     overlay.appendChild(cerrarImagen); 
